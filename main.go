@@ -46,23 +46,24 @@ func init() {
 func parseConfig(cmd *cli.Command) {
 
 	if cmd.IsSet("max-cam") {
-		config.MaxCam = cmd.IntArg("max-cam")
+		config.MaxCam = cmd.Int("max-cam")
 	}
 
 	if cmd.IsSet("output-dir") {
-		config.OutputDir = cmd.StringArg("output-dir")
+		config.OutputDir = cmd.String("output-dir")
 	}
 
 	if cmd.IsSet("width") {
-		config.Width = cmd.Float64Arg("width")
+		config.Width = cmd.Float64("width")
 	}
 
 	if cmd.IsSet("height") {
-		config.Height = cmd.Float64Arg("height")
+		config.Height = cmd.Float64("height")
 	}
 
 	if cmd.IsSet("fps") {
-		config.FPS = cmd.Float64Arg("fps")
+		fmt.Println("HEEEEEEEEEEEEEEEEEEEEE", cmd.Float64("fps"))
+		config.FPS = cmd.Float64("fps")
 	}
 	if cmd.IsSet("enable-overlay") {
 		config.EnableOverlay = cmd.Bool("enable-overlay")
